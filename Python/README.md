@@ -8,7 +8,8 @@
 2. If the values are not equal, compare the target value to the middle element of the remaining half which always potaintially contains the element.
 3. Repeat step 2, until the element is found or the remaining half array is empty.
 
-###Result table for efficiency
+### Result table for calculating efficiency
+
 | **Array size** | 0 |   1   |   2   | 3 |   4   | 5 | 6 | 7 |   8   |
 |----------------|---|-------|-------|---|-------|---|---|---|-------|
 | **Iterations** | 0 | **1** | **2** | 2 | **3** | 3 | 3 | 3 | **4** | 
@@ -36,9 +37,11 @@ So it requres **4** iterations in an array with 3 elements in the worst case.
 
 ##### Calculation
 We could find a pattern in the result table as below.
+
 |  Array size  | 1 | 2 | 4 | 8 |
 |--------------|---|---|---|---|
 **Iterations** | 1 | 2 | 3 | 4 | 
+
 The iteration can be expressed as
 <p align="center">
     <img src="https://latex.codecogs.com/gif.latex?\log_{2}(n)&plus;1">
