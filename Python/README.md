@@ -1,7 +1,7 @@
 # Python Search and Sort Algorithm
 
 - [Binery Search](https://github.com/Chun-Chieh/LearningNotes/tree/master/Python#binary-search)
-- [Bubble Sort]()
+- [Bubble Sort](https://github.com/Chun-Chieh/LearningNotes/tree/master/Python#bubble-sort)
 
 ## Binary search
 - A serch algoithm to find an element in a **sorted** array
