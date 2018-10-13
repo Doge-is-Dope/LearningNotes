@@ -55,7 +55,6 @@ Thus, the iteration can be expressed as
     <img src="https://latex.codecogs.com/gif.latex?\log_{2}(n)&plus;1">
 </p>
 ### Reference
-
 [Visualization](https://www.cs.usfca.edu/~galles/visualization/Search.html)
 
 
@@ -71,7 +70,7 @@ Thus, the iteration can be expressed as
 |-----------------------|-----|-----|-----|-----|-----|-----|---|-----|
 | **No of Comparisons** |n - 1|n - 1|n - 1|n - 1|n - 1|n - 1|...|n - 1|
 
-##### Calculation
+#### Calculation
 Thus, the worst case can be expressed as  ![](https://latex.codecogs.com/gif.latex?\left&space;(&space;n-1&space;\right&space;)\ast&space;\left&space;(&space;n-1&space;\right&space;)=&space;n^{2}-2n&plus;1)
 
 
