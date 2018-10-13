@@ -38,11 +38,13 @@ So it requres **4** iterations in an array with 3 elements in the worst case.<br
 
 ##### Calculation
 We could find a pattern in the result table as below.
-<br />
+
+
 |  Array size  | 1 | 2 | 4 | 8 |
 |--------------|---|---|---|---|
 **Iterations** | 1 | 2 | 3 | 4 |
-<br />
+
+
 The iteration can be expressed as
 <p align="center">
     <img src="https://latex.codecogs.com/gif.latex?\log_{2}(n)&plus;1">
