@@ -54,7 +54,10 @@ Thus, the iteration can be expressed as
 <p align="center">
     <img src="https://latex.codecogs.com/gif.latex?\log_{2}(n)&plus;1">
 </p>
+
 ### Reference
+
+
 [Visualization](https://www.cs.usfca.edu/~galles/visualization/Search.html)
 
 
