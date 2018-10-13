@@ -1,4 +1,8 @@
 # Python Search Algorithm
+
+- [Binery Search](https://github.com/Chun-Chieh/LearningNotes/tree/master/Python#binary-search)
+- 
+
 ## Binary search
 - A serch algoithm to find an element in a **sorted** array
 - Efficiency: O(log(n))
