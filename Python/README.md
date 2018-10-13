@@ -35,8 +35,7 @@ Search element **8** in an array = [1, 2, 3, 4, 5, 6, 7, 8]<br />
 -> middle: 7, rest: [8]<br />
 -> middle: 8, rest: []<br />
 So it requres **4** iterations in an array with 3 elements in the worst case.<br />
-<br />
-<br />
+
 ##### Calculation
 We could find a pattern in the result table as below.
 <br />
