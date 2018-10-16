@@ -2,6 +2,9 @@
 
 - [Binery Search](https://github.com/Chun-Chieh/LearningNotes/tree/master/Python#binary-search)
 - [Bubble Sort](https://github.com/Chun-Chieh/LearningNotes/tree/master/Python#bubble-sort)
+- [Merge Sort](https://github.com/Chun-Chieh/LearningNotes/tree/master/Python#merge-sort)
+- 
+-[Quick Sort]()
 
 ## Binary search
 - A serch algoithm to find an element in a **sorted** array
@@ -71,12 +74,40 @@ Thus, the iteration can be expressed as
 ### Results table for calculating the efficiency
 | **Iteration No**      |  0  |  1  |  2  |  3  |  4  |  5  |...|n - 1|
 |-----------------------|-----|-----|-----|-----|-----|-----|---|-----|
-| **No of Comparisons** |n - 1|n - 1|n - 1|n - 1|n - 1|n - 1|...|n - 1|
+| **Number of Comparisons** |n - 1|n - 1|n - 1|n - 1|n - 1|n - 1|...|n - 1|
 
 #### Calculation
 Thus, the worst case can be expressed as  ![](https://latex.codecogs.com/gif.latex?\left&space;(&space;n-1&space;\right&space;)\ast&space;\left&space;(&space;n-1&space;\right&space;)=&space;n^{2}-2n&plus;1)
 
 
 ## Merge sort
-- Divide & conquer
+- Divide & conquer; Reliable
+- Worst: ![](https://latex.codecogs.com/gif.latex?O\left&space;(&space;n&space;\log&space;n&space;\right&space;))
+- Average: ![](https://latex.codecogs.com/gif.latex?O\left&space;(&space;n&space;\log&space;n&space;\right&space;))
+- Best: ![](https://latex.codecogs.com/gif.latex?O\left&space;(&space;n&space;\log&space;n&space;\right&space;))
+- Space: ![](https://latex.codecogs.com/gif.latex?O\left&space;(&space;n&space;\right&space;))
+
+
+### Results table for calculating the efficiency
+| **Array size** |1|2|3|4|5|6|7|8|9|
+|----------------|-|-|-|-|-|-|-|-|-|
+| **Iterations** |0|1|2|2|3|3|3|3|4|
+
+## Quick sort
+- Divider & conquer
+- Always pick an element as **pivot**
+- Worst: ![](https://latex.codecogs.com/gif.latex?O\left&space;(&space;n^{2}&space;\right&space;))
+- Average: ![](https://latex.codecogs.com/gif.latex?O\left&space;(n\log&space;n&space;\right&space;))
+- Best: ![](https://latex.codecogs.com/gif.latex?O\left&space;(n\log&space;n&space;\right&space;))
+- Space: ![](https://latex.codecogs.com/gif.latex?O\left&space;(1&space;\right&space;))
+
+
+### Pivot
+A pivot can be:
+1. the first element
+2. the last element
+3. a random element
+4. median
+
+
 
