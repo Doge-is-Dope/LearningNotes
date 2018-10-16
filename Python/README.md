@@ -3,8 +3,7 @@
 - [Binery Search](https://github.com/Chun-Chieh/LearningNotes/tree/master/Python#binary-search)
 - [Bubble Sort](https://github.com/Chun-Chieh/LearningNotes/tree/master/Python#bubble-sort)
 - [Merge Sort](https://github.com/Chun-Chieh/LearningNotes/tree/master/Python#merge-sort)
-- 
--[Quick Sort]()
+- [Quick Sort](https://github.com/Chun-Chieh/LearningNotes/tree/master/Python#quick-sort)
 
 ## Binary search
 - A serch algoithm to find an element in a **sorted** array
