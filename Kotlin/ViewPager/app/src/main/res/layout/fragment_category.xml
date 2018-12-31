@@ -3,11 +3,21 @@
              android:orientation="vertical"
              android:layout_width="match_parent"
              android:layout_height="match_parent">
-    <TextView
-            android:id="@+id/tv_cat_title"
+
+    <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.MaterialComponents.CardView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:text="Category"
-            android:textSize="40sp"
-            android:gravity="center_horizontal|center_vertical"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:minHeight="200dp">
+        <TextView
+                android:id="@+id/tv_cat_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:text="Category"
+                android:textSize="40sp"
+                android:gravity="center_horizontal|center_vertical"/>
+    </com.google.android.material.card.MaterialCardView>
+
 </FrameLayout>
