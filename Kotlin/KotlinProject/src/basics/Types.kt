@@ -47,12 +47,16 @@ fun main(args: Array<String>) {
     val character = 'S'
     println("character: $character, type: ${character.javaClass.kotlin}")
 
+    // Boolean
     val bl = false
     println("bl: $bl, type: ${bl.javaClass.kotlin}")
 
+    // String
     val str = "Hello World"
     println("str: $str, type: ${str.javaClass.kotlin}")
 
+
+    // Cast
 
     val numbers: IntArray = intArrayOf(3, 4, 6)
     println("numbers: ${numbers[1]}, type: ${numbers.javaClass.kotlin}")
