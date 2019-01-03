@@ -50,8 +50,11 @@ num.times(1)
 num.div(10)
 num.minus(1)
 ```
-### Changeable and unchangeable variable
-**val** is unchangeable; **var** is changeable
+### Mutable and Immutable variable
+Immutable variables are the safest option when you know that a variable will never need to change values.
+For example, in a multi-threaded environment, immutable variable is thread safe, because once it has been assigned by the initial thread, no thread can change it.
+
+In Kotlin, **val** is unchangeable; **var** is changeable
 ```kotlin
 val x = 1
 x = 2 // error: val cannot be reassigned
@@ -186,6 +189,52 @@ val sizes = arrayOf("byte", "kilobyte", "megabyte", "gigabyte","terabyte", "peta
 for ((i, value) in array.withIndex()) {
     println("1 ${sizes[i]} = ${value.toLong()} bytes")
 }
+```
+
+### Function
+```kotlin
+fun printHello(){
+    println("Hello World") 
+}
+printHello()
+```
+
+Arguments can have default value
+```kotlin
+fun swim(temparature: Int, speed: String = "fast") {
+    println("Temp: $temparature. The speed is $speed")
+}
+swim() // use default value
+swim("slow") // use custom value
+swim(speed="medium") // specify the name of the argument
+```
+The best practice is to **put arguments without defaults first** and then the ones with defaults afterwards.
+
+### Main Arguments
+Run -> Edit Configurations... -> Program Arguments
+```kotlin
+println("Hello ${args[0]}")
+```
+
+### Unit
+In Kotlin, every line has a value. 
+```kotlin
+// print 'kotlin.Unit'
+println(println())
+```
+```kotlin
+var temperature = 20
+val isHot = if (temperature > 50) true else false
+println(isHot)
+val message = "You are ${if(temperature > 50) "fired" else "cool"}."
+```
+Also, 'when' can return values in a function.
+```kotlin
+return when (birthday) {
+        in 1..7 -> "Nice"
+        28, 31 -> "Very cool"
+        else -> "Something Else"
+    }
 ```
 
 ### Useful References
