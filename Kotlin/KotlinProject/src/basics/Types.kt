@@ -1,5 +1,7 @@
 package basics
 
+import kotlin.math.pow
+
 // Demonstrate the basic types of Kotlin
 // Numeric: Int, Long, Double, Float, Short, Byte
 // Logic:Boolean
@@ -56,7 +58,14 @@ fun main(args: Array<String>) {
     println("str: $str, type: ${str.javaClass.kotlin}")
 
 
-    // Cast
+    val array = Array(7) { 1000.0.pow(it) }
+    val sizes = arrayOf(
+        "byte", "kilobyte", "megabyte", "gigabyte",
+        "terabyte", "petabyte", "exabyte"
+    )
+    for ((i, value) in array.withIndex()) {
+        println("1 ${sizes[i]} = ${value.toLong()} bytes")
+    }
 
     val numbers: IntArray = intArrayOf(3, 4, 6)
     println("numbers: ${numbers[1]}, type: ${numbers.javaClass.kotlin}")

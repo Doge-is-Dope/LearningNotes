@@ -34,6 +34,7 @@ In Kotlin
 class Person(var name: String = "")
 ```
 
+
 ### Operators
 ```kotlin
 println(1 + 1) // 2
@@ -103,9 +104,89 @@ addressBook = listOf(null, null, 3, 4)
 println(addressBook?.get(0) ?: 0) // print '0' if addressBook[0] exists (and addressBook exists
 ```
 
+### Strings
+
+```kotlin
+val s1= "Hello"
+val s2 = "World!"
+// Use '+' to concatenate strings
+s1 + " " +s2
+// Use string template to concatenate strings
+"$s1 $s2" 
+```
+
+### Value Comparison
+```kotlin
+s1 = "A"
+s2 = "A"
+s1 == s2 // true
+s1 != s2 // false
+```
 
 
+### Ranges
+```kotlin
+println(4 in 0..4) // true (4 is included)
+```
 
+### When (switch-case)
+```kotlin
+var fishName = "snapper"
+when (fishName.length) {
+    0 -> println("Fish name cannot be empty")
+    in 3..12 -> println("Good fish name")
+    else -> println("OK fish name")
+}
+```
+
+### Array
+Create an untyped array
+```kotlin
+val color = arrayOf("Red", "Blue", "Yellow", 123, 222)
+```
+Create a typed array
+```kotlin
+val numbers = intArrayOf(1, 2, 3)
+```
+Create a nested array
+```kotlin
+var market = arrayOf(arrayOf("beef", "pork"), arrayOf("tomato", "grapes"))
+```
+Print an array
+```kotlin
+println(Arrays.toString(color))
+``` 
+Print the elements in an array
+```kotlin
+for(element in color) println(element)
+```
+Print the elements with index in an array
+```kotlin
+for((index, element) in color.withIndex()) println("Index: $index, Element: $element ")
+```
+Loop through ranges of elements
+```kotlin
+for (i in 'a'..'z') print(i)
+for (i in 1..5) print(i)
+``` 
+Loop through a range downwards
+```kotlin
+for (i in 5 downTo 1) print(i)
+```
+Loop through a range advancing in multiple steps
+```kotlin
+for (i in 1..10 step 2) print(i)
+```
+
+Example
+```kotlin
+val array = Array(7) { 1000.0.pow(it) }
+val sizes = arrayOf("byte", "kilobyte", "megabyte", "gigabyte","terabyte", "petabyte", "exabyte")
+
+for ((i, value) in array.withIndex()) {
+    println("1 ${sizes[i]} = ${value.toLong()} bytes")
+}
+```
 
 ### Useful References
 - [Kotlin Documentation](http://kotlinlang.org/docs/reference/)
