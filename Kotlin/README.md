@@ -35,17 +35,19 @@ class Person(var name: String = "")
 ```
 
 ## Contents
-- [Operators]()
-- [Mutable / Immutable variable ]()
-- [Number]()
-- [Strings]()
-- [Value Comparison]()
-- [Range]()
-- [When]()
-- [Array]()
-- [Function]()
-- [Main Function Arguments]()
-- [Unit]()
+- [Operators](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#operators)
+- [Mutable / Immutable variable ](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#mutable-and-immutable-variable)
+- [Number](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#number)
+- [Nullability](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#nullability)
+- [Strings](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#strings)
+- [Value Comparison](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#value-comparison)
+- [Range](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#range)
+- [When](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#when-switch-case)
+- [Array](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#array)
+- [Function](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#function)
+- [Main Function Arguments](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#main-arguments)
+- [Unit](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#unit)
+- [Kotlin Standard Library]
 
 ### Operators
 ```kotlin
@@ -132,12 +134,26 @@ s1 + " " +s2
 
 ### Value Comparison
 ```kotlin
-s1 = "A"
-s2 = "A"
-s1 == s2 // true
-s1 != s2 // false
+val a: Int = 999
+val b: Int? = a
+val c: Int? = a
 ```
-
+'==' in Kotlin is called **Structural equality**. It compares the content of two objects.
+```kotlin
+println(b == c)    //true
+```
+'===' in Kotlin is called **Referential equality** (identity). It determines whether two objects share the same memory address. 
+```kotlin
+println(b === c)   //false
+```
+**'Int?'** will box the variable as an object (because it's another data type); **'Int'** won't (because it's primitive type). The address will be the same. 
+```kotlin
+val a: Int = 999
+val b: Int = a
+val c: Int = a
+println(b == c)     // true
+println(b === c)    // true
+```
 
 ### Range
 ```kotlin
@@ -153,11 +169,13 @@ when (fishName.length) {
     else -> println("OK fish name")
 }
 ```
-'when' can have no argument 
+'when' can substitute if-elses by having no arguments
 ```kotlin
 when {
-    mood == "happy" && weather == "Sunny" -> "go for a walk"
-    else -> "Stay home and read."
+    temperature > 38 -> true
+    dirty  > 30 -> true
+    day == "Sunday" -> true
+    else -> false
 }
 ```
 ### Array
@@ -218,15 +236,32 @@ printHello()
 ```
 
 Arguments can have default value
+The best practice is to **put arguments without defaults first** and then the ones with defaults afterwards.
+
 ```kotlin
-fun swim(temparature: Int, speed: String = "fast") {
-    println("Temp: $temparature. The speed is $speed")
+fun swim(temperature: Int, speed: String = "fast") {
+    println("Temp: $temperature. The speed is $speed")
 }
 swim() // use default value
 swim("slow") // use custom value
 swim(speed="medium") // specify the name of the argument
 ```
-The best practice is to **put arguments without defaults first** and then the ones with defaults afterwards.
+
+Defaulut value can be retrieve from other function. Beware of using this expensive operation because **default parameters are evaluated at call time by Kotlin**.
+```kotlin
+fun getTemperatureSensorReading() = 22
+fun swim(temperature: getTemperatureSensorReading(), speed: String = "fast") {
+    println("Temp: $temperature. The speed is $speed")
+}
+```
+
+One-line function is possible in Kotlin
+```kotlin
+fun isTooHot(temperature: Int) = temperature > 30
+fun isTooDirty(dirty: Int) = dirty > 30
+fun isSunday(day: String) = day == "Sunday"
+```
+
 
 ### Main Arguments
 Run -> Edit Configurations... -> Program Arguments
@@ -258,6 +293,16 @@ It's valid to use the retrun value of a if-else evaluation.
 ```kotlin
 fun canAddFish(tankSize: Double, currentFish: List<Int>, fishSize: Int=2, hasDecorations: Boolean = true): Boolean {
     return (if (hasDecorations) tankSize * 0.8 else tankSize) - currentFish.sum() >= fishSize
+}
+```
+
+
+### Kotlin Standard Library
+Kotlin Standard Library provides living essentials for everyday work.
+E.g. repeat
+```kotlin
+repeat(2){
+    println("A fish is swimming!")
 }
 ```
 
