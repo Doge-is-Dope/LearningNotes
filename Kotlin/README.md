@@ -33,7 +33,19 @@ In Kotlin
 ```kotlin
 class Person(var name: String = "")
 ```
-
+---
+###Contents
+- [Operators]()
+- [Mutable / Immutable variable ]()
+- [Number]()
+- [Strings]()
+- [Value Comparison]()
+- [Range]()
+- [When]()
+- [Array]()
+- [Function]()
+- [Main Function Arguments]()
+- [Unit]()
 
 ### Operators
 ```kotlin
@@ -127,7 +139,7 @@ s1 != s2 // false
 ```
 
 
-### Ranges
+### Range
 ```kotlin
 println(4 in 0..4) // true (4 is included)
 ```
@@ -141,7 +153,13 @@ when (fishName.length) {
     else -> println("OK fish name")
 }
 ```
-
+'when' can have no argument 
+```kotlin
+when {
+    mood == "happy" && weather == "Sunny" -> "go for a walk"
+    else -> "Stay home and read."
+}
+```
 ### Array
 Create an untyped array
 ```kotlin
@@ -228,13 +246,19 @@ val isHot = if (temperature > 50) true else false
 println(isHot)
 val message = "You are ${if(temperature > 50) "fired" else "cool"}."
 ```
-Also, 'when' can return values in a function.
+'when' can return values in a function.
 ```kotlin
 return when (birthday) {
         in 1..7 -> "Nice"
         28, 31 -> "Very cool"
         else -> "Something Else"
     }
+```
+It's valid to use the retrun value of a if-else evaluation.
+```kotlin
+fun canAddFish(tankSize: Double, currentFish: List<Int>, fishSize: Int=2, hasDecorations: Boolean = true): Boolean {
+    return (if (hasDecorations) tankSize * 0.8 else tankSize) - currentFish.sum() >= fishSize
+}
 ```
 
 ### Useful References
