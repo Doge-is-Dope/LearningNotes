@@ -33,8 +33,8 @@ In Kotlin
 ```kotlin
 class Person(var name: String = "")
 ```
----
-###Contents
+
+## Contents
 - [Operators]()
 - [Mutable / Immutable variable ]()
 - [Number]()
