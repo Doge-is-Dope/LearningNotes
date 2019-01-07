@@ -8,7 +8,7 @@ import java.util.*
 fun main(args: Array<String>) {
     feedTheFish()
 
-    repeat(2){
+    repeat(2) {
         println("A fish is swimming!")
     }
 }
@@ -40,6 +40,8 @@ fun feedTheFish() {
     println("Today is $day and the fish eats $food")
 
     if (shouldChangeWater(day)) println("Change water today")
+
+    dirtyProcessor()
 }
 
 fun randomDay(): String {
@@ -59,4 +61,18 @@ fun fishFood(day: String): String {
         "Sunday" -> "plankton"
         else -> "fasting"
     }
+}
+
+
+var dirty = 20
+val waterFilter: (Int) -> Int = { dirty -> dirty / 2 }
+fun feedFish(dirty: Int) = dirty + 10
+fun updateDirty(dirty: Int, operation: (Int) -> Int): Int {
+    return operation(dirty)
+}
+
+
+fun dirtyProcessor() {
+    dirty = updateDirty(dirty, waterFilter)
+    dirty = updateDirty(dirty, ::feedFish)
 }

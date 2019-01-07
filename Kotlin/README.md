@@ -45,9 +45,11 @@ class Person(var name: String = "")
 - [When](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#when-switch-case)
 - [Array](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#array)
 - [Function](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#function)
+  - [Lambda]
 - [Main Function Arguments](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#main-arguments)
 - [Unit](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#unit)
 - [Kotlin Standard Library]
+  - [Filter]
 
 ### Operators
 ```kotlin
@@ -247,7 +249,7 @@ swim("slow") // use custom value
 swim(speed="medium") // specify the name of the argument
 ```
 
-Defaulut value can be retrieve from other function. Beware of using this expensive operation because **default parameters are evaluated at call time by Kotlin**.
+Default value can be retrieve from other function. Beware of using this expensive operation because **default parameters are evaluated at call time by Kotlin**.
 ```kotlin
 fun getTemperatureSensorReading() = 22
 fun swim(temperature: getTemperatureSensorReading(), speed: String = "fast") {
@@ -261,6 +263,60 @@ fun isTooHot(temperature: Int) = temperature > 30
 fun isTooDirty(dirty: Int) = dirty > 30
 fun isSunday(day: String) = day == "Sunday"
 ```
+
+#### Lambda
+```kotlin
+val swim = { println("Swim \n")}
+swim()
+```
+Lambda arguments go on the lfs of the function arrow; The body goes after the function arrow.
+```kotlin
+var dirty = 20
+val waterFilter = { dirty: Int -> dirty / 2 }
+waterFilter(dirty)
+```
+Lambda can take argements and return a value
+```kotlin
+val waterFilter: (Int) -> Int = { dirty -> dirty / 2 }
+```
+It's possible to take lambda as a function's argument. (The lambda argument prefers to be the last parameter)
+```kotlin
+fun updateDirty(dirty: Int, operation: (Int) -> Int): Int {
+    return operation(dirty) 
+}
+```
+Call lambda as a parameter.
+If the function is a named function(not a lambda), '::' (double colon) is used to pass a reference.
+```kotlin
+fun feedFish(dirty: Int) = dirty + 10
+
+fun dirtyProcessor() {
+    dirty = updateDirty(dirty, waterFilter)
+    dirty = updateDirty(dirty, ::feedFish)
+}
+```
+A higher-order function is a function that takes functions as parameters, or returns a function.
+In Kotlin, it's called **last parameter** by using a higher-order function as the last argument.
+```kotlin
+dirty = updateDirty(dirty) { dirty ->
+    dirty + 50
+}
+``` 
+The above is same as the following.
+```kotlin
+dirty = updateDirty(dirty), { dirty -> dirty + 50 })
+```
+
+Comparing a Lambda with a named function
+
+```kotlin
+val random1 = random()
+val random2 = { random() }
+```
+random1 has a value assigned at compile time, and the value never changes when the variable is accessed.
+
+
+random2 has a lambda assigned at compile time, and the lambda is executed every time the variable is referenced, returning a different value.
 
 
 ### Main Arguments
@@ -300,11 +356,50 @@ fun canAddFish(tankSize: Double, currentFish: List<Int>, fishSize: Int=2, hasDec
 ### Kotlin Standard Library
 Kotlin Standard Library provides living essentials for everyday work.
 E.g. repeat
+
 ```kotlin
 repeat(2){
     println("A fish is swimming!")
 }
 ```
+
+#### Filter
+Filter is a control flow structure from the standard library.
+Filter will test each element against its condition and return a boolean.
+
+```kotlin
+val aList = listOf("happy", "sad", "angry", "apple")
+println(aList.filter{ true }) // return all elements
+println(aList.filter{ it[0] == 'a' })
+println(aList.take(2).filter{ it.startWith('s') })
+println(aList.filter{ it.contains('ap') }.sortedBy{ it.length })
+```
+By default, filter is eager. When a filter is called, it creates a new list with the elements that pass through the filter.
+To apply filter lazily, asSequence() can be used to store the result as a sequence.
+```kotlin
+val aList = listOf("happy", "sad", "angry")
+val eager = aList.filter{ it[0] == 'a' } // filter returns a list
+```
+
+// apply filter lazily
+val filtered = aList.asSequence().filter{ it[0] == 'a' } // filter returns a sequence
+println(filtered.toLisy()) // convert a sequence to a list
+```
+Another example of using asSequence:
+```kotlin
+val lazyMap =  aList.asSequence().map{
+    println("map: $it ")
+    it
+}
+println(lazymap) // print nothing
+println("First: ${lazyMap.first()}")
+println("All: ${lazyMap.toList()}")
+```
+
+
+
+
+
 
 ### Useful References
 - [Kotlin Documentation](http://kotlinlang.org/docs/reference/)

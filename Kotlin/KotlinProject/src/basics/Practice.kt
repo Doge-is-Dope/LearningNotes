@@ -1,8 +1,16 @@
 package basics
 
+import kotlin.random.Random
+
 
 fun main(args: Array<String>) {
+    println(whatShouldIDoToday("happy", "sunny"))
     println(whatShouldIDoToday("sad"))
+    print("How do you feel?")
+    println(whatShouldIDoToday(getMood()!!))
+
+    val rollDice = { Random.nextInt(1, 12)}
+    println(rollDice.toString())
 }
 
 fun getMood(): String? {
@@ -10,20 +18,21 @@ fun getMood(): String? {
     return readLine()
 }
 
-fun shallGoForAWalk(mood: String, weather: String) = mood == "happy" && weather == "Sunny"
-fun shallStayInBed(mood: String, weather: String, temperature: Int) =
+fun isHappySunny(mood: String, weather: String) = mood == "happy" && weather == "Sunny"
+fun isSadRainyCold(mood: String, weather: String, temperature: Int) =
     mood == "sad" && weather == "rainy" && temperature == 0
-
-fun shallGoSwimming(temperature: Int) = temperature > 35
-fun shallWearMoreClothes(temperature: Int) = temperature < 15
+fun isVeryHot(temperature: Int) = temperature > 35
+fun isVeryCold(temperature: Int) = temperature < 0
 
 
 fun whatShouldIDoToday(mood: String, weather: String = "sunny", temperature: Int = 24): String {
     return when {
-        shallGoForAWalk(mood, weather) -> "go for a walk"
-        shallStayInBed(mood, weather, temperature) -> "stay in bed"
-        shallGoSwimming(temperature) -> "go swimming"
-        shallWearMoreClothes(temperature) -> "wear more clothes"
+        isHappySunny(mood, weather) -> "go for a walk"
+        isSadRainyCold(mood, weather, temperature) -> "stay in bed"
+        isVeryHot(temperature) -> "go swimming"
+        isVeryCold(temperature) -> "wear more clothes"
         else -> "Stay home and read."
     }
 }
+
+
