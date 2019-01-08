@@ -1,38 +1,29 @@
 package basics
 
-import kotlin.random.Random
 
-
+// Use default parameters, at least one lambda, and pass a function as a parameter.
 fun main(args: Array<String>) {
-    println(whatShouldIDoToday("happy", "sunny"))
-    println(whatShouldIDoToday("sad"))
-    print("How do you feel?")
-    println(whatShouldIDoToday(getMood()!!))
-
-    val rollDice = { Random.nextInt(1, 12)}
-    println(rollDice.toString())
+    val newOrder1 = listOf("burger", "burger", "donut", "pepper")
+    println("")
 }
 
-fun getMood(): String? {
-    print("What's your mood? ")
-    return readLine()
-}
+fun printOrder()
 
-fun isHappySunny(mood: String, weather: String) = mood == "happy" && weather == "Sunny"
-fun isSadRainyCold(mood: String, weather: String, temperature: Int) =
-    mood == "sad" && weather == "rainy" && temperature == 0
-fun isVeryHot(temperature: Int) = temperature > 35
-fun isVeryCold(temperature: Int) = temperature < 0
+fun order(items: List<String>, membership: Boolean = false): Double = if (membership) 0.8 else 1 * calculateTotal(items)
 
-
-fun whatShouldIDoToday(mood: String, weather: String = "sunny", temperature: Int = 24): String {
-    return when {
-        isHappySunny(mood, weather) -> "go for a walk"
-        isSadRainyCold(mood, weather, temperature) -> "stay in bed"
-        isVeryHot(temperature) -> "go swimming"
-        isVeryCold(temperature) -> "wear more clothes"
-        else -> "Stay home and read."
+fun calculateTotal(items: List<String>): Double {
+    var total = 0.0
+    for (item in items) {
+        total += when (item) {
+            "burger" -> 3.5
+            "fries" -> 2.0
+            "coke", "sprite" -> 1.0
+            "donut" -> 2.0
+            else -> 0.0
+        }
     }
+    return total
 }
+
 
 

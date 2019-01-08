@@ -45,11 +45,11 @@ class Person(var name: String = "")
 - [When](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#when-switch-case)
 - [Array](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#array)
 - [Function](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#function)
-  - [Lambda]
+  - [Lambda](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#lambda)
 - [Main Function Arguments](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#main-arguments)
 - [Unit](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#unit)
-- [Kotlin Standard Library]
-  - [Filter]
+- [Kotlin Standard Library](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#kotlin-standard-library)
+  - [Filter](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#filter)
 
 ### Operators
 ```kotlin
@@ -275,6 +275,12 @@ var dirty = 20
 val waterFilter = { dirty: Int -> dirty / 2 }
 waterFilter(dirty)
 ```
+Another way to use Lambda: Function type notation. Function type notation is more readable, which reduces errors, clearly showing the what type is passed in and what type is returned.
+```kotlin
+val waterFilter: (Int) -> Int = { dirty -> dirty / 2 }
+waterFilter(dirty)
+```
+
 Lambda can take argements and return a value
 ```kotlin
 val waterFilter: (Int) -> Int = { dirty -> dirty / 2 }
@@ -304,7 +310,7 @@ dirty = updateDirty(dirty) { dirty ->
 ``` 
 The above is same as the following.
 ```kotlin
-dirty = updateDirty(dirty), { dirty -> dirty + 50 })
+dirty = updateDirty((dirty), { dirty -> dirty + 50 })
 ```
 
 Comparing a Lambda with a named function
