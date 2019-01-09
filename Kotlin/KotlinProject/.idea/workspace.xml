@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2289ab1-c607-4217-bc22-4eb03f6d5482" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KotlinProject/Practice/Aquarium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KotlinProject/Practice/Aquarium.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KotlinProject/Practice/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KotlinProject/Practice/MainKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Practice/Aquarium.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practice/Aquarium.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Practice/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practice/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,8 +17,8 @@
         <entry file="file://$PROJECT_DIR$/../README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="386">
-                <caret line="388" lean-forward="true" selection-start-line="388" selection-end-line="388" />
+              <first_editor relative-caret-position="218">
+                <caret line="391" column="22" selection-start-line="391" selection-start-column="22" selection-end-line="391" selection-end-column="22" />
               </first_editor>
               <second_editor />
             </state>
@@ -33,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Practice/Aquarium.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            <state relative-caret-position="105">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -80,8 +75,8 @@
         <option value="$PROJECT_DIR$/src/basics/AMS.kt" />
         <option value="$PROJECT_DIR$/src/basics/Practice.kt" />
         <option value="$PROJECT_DIR$/src/Practice/Main.kt" />
-        <option value="$PROJECT_DIR$/../README.md" />
         <option value="$PROJECT_DIR$/src/Practice/Aquarium.kt" />
+        <option value="$PROJECT_DIR$/../README.md" />
       </list>
     </option>
   </component>
@@ -99,7 +94,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546999568355" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547000394157" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -261,7 +256,7 @@
       <workItem from="1546226676525" duration="875000" />
       <workItem from="1546228248053" duration="482000" />
       <workItem from="1546260199828" duration="33004000" />
-      <workItem from="1546994264936" duration="1371000" />
+      <workItem from="1546994264936" duration="2074000" />
     </task>
     <task id="LOCAL-00001" summary="kotlin basics">
       <created>1545017893796</created>
@@ -274,7 +269,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53538000" />
+    <option name="totallyTimeSpent" value="54241000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -466,16 +461,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Practice/Aquarium.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        <state relative-caret-position="105">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="386">
-            <caret line="388" lean-forward="true" selection-start-line="388" selection-end-line="388" />
+          <first_editor relative-caret-position="218">
+            <caret line="391" column="22" selection-start-line="391" selection-start-column="22" selection-end-line="391" selection-end-column="22" />
           </first_editor>
           <second_editor />
         </state>

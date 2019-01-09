@@ -386,11 +386,49 @@ var volume: Int
 ```
 #### Visibility modifier
 Everything is **public** by default
-| Modifier| Visibility|
+
+
+For members declared directly inside a package:
+
+| Modifier| Package Visibility|
 | ------- | --------- |
-| (public) | Everywhere |
-| private | File       |
-| internal | Module    |
+| (public)| Everywhere |
+| private | File |
+| internal | Module|
+
+```kotlin
+package foo
+
+private fun foo() { ... } // visible inside the file
+
+public var bar: Int = 5 // property is visible everywhere
+    private set         // setter is visible only in the file
+    
+internal val baz = 6    // visible inside the same module
+```
+
+For members declared inside a class:
+
+| Modifier| Class Visibility|
+| ------- | --------- |
+| (public)| Class & public members |
+| private | Inside class (Subclasses can't see) |
+| protected | Inside class (Subclasses can see) | 
+| internal | Module|
+
+```kotlin
+class Outer {
+    private val a = 1
+    protected open val b = 2
+    internal val c = 3
+    val d = 4  // public by default
+    
+    protected class Nested {
+        public val e: Int = 5
+    }
+}
+```
+
 
 
 
