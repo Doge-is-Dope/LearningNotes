@@ -48,6 +48,7 @@ class Person(var name: String = "")
   - [Lambda](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#lambda)
 - [Main Function Arguments](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#main-arguments)
 - [Unit](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#unit)
+- [Class]
 - [Kotlin Standard Library](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#kotlin-standard-library)
   - [Filter](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#filter)
 
@@ -252,7 +253,7 @@ swim(speed="medium") // specify the name of the argument
 Default value can be retrieve from other function. Beware of using this expensive operation because **default parameters are evaluated at call time by Kotlin**.
 ```kotlin
 fun getTemperatureSensorReading() = 22
-fun swim(temperature: getTemperatureSensorReading(), speed: String = "fast") {
+fun swim(temperature: Int = getTemperatureSensorReading(), speed: String = "fast") {
     println("Temp: $temperature. The speed is $speed")
 }
 ```
@@ -275,7 +276,7 @@ var dirty = 20
 val waterFilter = { dirty: Int -> dirty / 2 }
 waterFilter(dirty)
 ```
-Another way to use Lambda: Function type notation. Function type notation is more readable, which reduces errors, clearly showing the what type is passed in and what type is returned.
+Another way to use Lambda: **Function type notation**. Function type notation is more readable, which reduces errors, clearly showing the what type is passed in and what type is returned.
 ```kotlin
 val waterFilter: (Int) -> Int = { dirty -> dirty / 2 }
 waterFilter(dirty)
@@ -356,6 +357,22 @@ It's valid to use the retrun value of a if-else evaluation.
 fun canAddFish(tankSize: Double, currentFish: List<Int>, fishSize: Int=2, hasDecorations: Boolean = true): Boolean {
     return (if (hasDecorations) tankSize * 0.8 else tankSize) - currentFish.sum() >= fishSize
 }
+```
+
+### Class
+
+```kotlin
+class Person {
+    val age = 20
+    val gender = "male"
+}
+
+// create an instance
+val p1 = Person()
+```
+Properties can be used directly without getters
+```kotlin
+println("Age: ${p1.age}, Gender: ${p1.gender}")
 ```
 
 

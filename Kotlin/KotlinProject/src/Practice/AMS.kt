@@ -1,4 +1,4 @@
-package basics
+package Practice
 
 import java.util.*
 
