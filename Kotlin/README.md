@@ -48,7 +48,7 @@ class Person(var name: String = "")
   - [Lambda](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#lambda)
 - [Main Function Arguments](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#main-arguments)
 - [Unit](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#unit)
-- [Class]
+- [Class](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#class)
 - [Kotlin Standard Library](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#kotlin-standard-library)
   - [Filter](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#filter)
 
@@ -363,17 +363,35 @@ fun canAddFish(tankSize: Double, currentFish: List<Int>, fishSize: Int=2, hasDec
 
 ```kotlin
 class Person {
-    val age = 20
-    val gender = "male"
+    var age = 20
+    var gender = "male"
 }
 
 // create an instance
 val p1 = Person()
 ```
-Properties can be used directly without getters
+Properties can be used directly without getters/setters
 ```kotlin
+p1.age = 30
 println("Age: ${p1.age}, Gender: ${p1.gender}")
 ```
+#### Custom property
+Sometimes a property needs a custom getter/setter
+```kotlin
+var volume: Int
+        get() = width * height * length / 1000 
+        set(value) {
+            height = (value * 1000) / (width * length)
+        }
+```
+#### Visibility modifier
+Everything is **public** by default
+| Modifier| Visibility|
+| ------- | --------- |
+| (public) | Everywhere |
+| private | File       |
+| internal | Module    |
+
 
 
 ### Kotlin Standard Library
