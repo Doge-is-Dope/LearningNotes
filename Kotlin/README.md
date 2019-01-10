@@ -472,6 +472,33 @@ if any property is used before the init blocks, there's no need to call it expli
 
 Secondary constructor is not a good practice. It's better to keep a class simple by using one primary constructor and init blocks. When more flexibility is needed, helper functions can be considered
 
+#### Inheritance
+
+Every class in Kotlin inherits from the top level class **Any** implicitly.
+```kotlin
+class Person // Implicitly inherits from Any
+```
+To make a class inheritable, a class has to be **open**. (By default, classes are not subclassible.)
+```kotlin
+open class Base(p: Int)
+
+class Derived(p: Int) : Base(p)
+```
+
+##### Overriding Method
+To make a method overridable, an **open** modifier is needed for a function;
+The **override** modifier is required on subclass function.
+```kotlin
+open class Base {
+    open fun v() { ... }
+}
+
+class Derived() : Base() {
+    override fun v() { ... }
+}
+```
+
+
 
 ### Kotlin Standard Library
 Kotlin Standard Library provides living essentials for everyday work.
