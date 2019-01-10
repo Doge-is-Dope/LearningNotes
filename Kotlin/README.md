@@ -49,6 +49,8 @@ class Person(var name: String = "")
 - [Main Function Arguments](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#main-arguments)
 - [Unit](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#unit)
 - [Class](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#class)
+  - [Constructor]
+  - [Inheritance]
 - [Kotlin Standard Library](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#kotlin-standard-library)
   - [Filter](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#filter)
 
@@ -421,7 +423,7 @@ class Outer {
     private val a = 1
     protected open val b = 2
     internal val c = 3
-    val d = 4  // public by default
+    val d = 4  // public by     default
     
     protected class Nested {
         public val e: Int = 5
@@ -429,7 +431,46 @@ class Outer {
 }
 ```
 
+#### Constructor
+By using var / val on the constructor arguments, it creates the member properties.
+```kotlin
+class Aquarium(var length: Int = 100, var height: Int = 20, var width: Int = 40) {
+    ...
+}
+```
 
+If another constructor is needed, use **constructor()**. (secondary constructor)
+For example, add a constructor other than dimensions and calcualate based on the arguments.
+
+```kotlin
+class Aquarium(var length: Int = 100, var height: Int = 20, var width: Int = 40) {
+    constructor(numberOfFish: Int) : this() {
+        val water = numberOfFish * 2000 // cm3
+        val tank = water + water * 0.1
+        height = (tank / (length * width)).toInt()
+    }
+}
+```
+In Kotlin, overloading is not neeeded. Use **init** to do logic and initialize the properties
+```kotlin
+class Fish(val friendly: Boolean = true, volumeNeeded: Int) {
+    val size: Int
+    
+    init {
+        if (friendly) {
+            size = volumeNeeded
+        } else {
+            size = volumeNeeded * 2
+        }
+    }
+}
+```
+You can have multiple init blocks anywhere, and
+**'init' blocks always run before 'constructor' blocks**.
+They are executed from the top of the class to the bottom so
+if any property is used before the init blocks, there's no need to call it explicitly.
+
+Secondary constructor is not a good practice. It's better to keep a class simple by using one primary constructor and init blocks. When more flexibility is needed, helper functions can be considered
 
 
 ### Kotlin Standard Library
