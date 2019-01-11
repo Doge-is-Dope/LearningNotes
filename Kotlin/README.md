@@ -49,8 +49,9 @@ class Person(var name: String = "")
 - [Main Function Arguments](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#main-arguments)
 - [Unit](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#unit)
 - [Class](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#class)
-  - [Constructor]
-  - [Inheritance]
+  - [Constructor](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#constructor)
+  - [Inheritance](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#inheritance)
+  - [Interface]
 - [Kotlin Standard Library](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#kotlin-standard-library)
   - [Filter](https://github.com/Chun-Chieh/LearningNotes/tree/master/Kotlin#filter)
 
@@ -497,6 +498,52 @@ class Derived() : Base() {
     override fun v() { ... }
 }
 ```
+#### Interface
+Abstract classes and Interfaces can't be initiated. Abstract classes have constructors while Interfaces can't have any constructor.
+
+Abstract classes start with **abstract** modifier.
+
+```kotlin
+abstract class AquariumFish {
+    abstract val color: String
+}
+
+class Shark : AquariumFish() {
+    override val color: String = "gray"
+}
+
+class Plecostomus : AquariumFish() {
+    override val color: String = "gold"
+}
+```
+
+Then, we can use it like any other class
+
+```kotlin
+fun makeFish() {
+    val shark = Shark()
+    val pleco = Plecostomus()
+
+    println("Shark: ${shark.color}, Plecostomus: ${pleco.color}")
+}
+```
+
+We can create Interfaces and inplement its functions.
+
+```kotlin
+class Plecostomus : AquariumFish(), fishAction {
+    override val color: String = "gold"
+
+    override fun eat() {
+        println("munch on algae")
+    }
+}
+
+interface fishAction {
+    fun eat()
+}
+```
+
 
 
 

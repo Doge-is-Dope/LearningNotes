@@ -2,6 +2,7 @@ package Practice
 
 fun main(args: Array<String>) {
     buildAquarium()
+    makeFish()
 }
 
 fun buildAquarium() {
@@ -25,19 +26,15 @@ fun buildAquarium() {
                 "Width: ${smallAquarium2.width} cm"
     )
 
-    val spices1 = listOf(
-        Spice("curry", "mild"),
-        Spice("pepper", "medium"),
-        Spice("cayenne", "spicy"),
-        Spice("ginger", "mild"),
-        Spice("red curry", "medium"),
-        Spice("green curry", "mild"),
-        Spice("hot pepper", "extremely spicy"),
-        Spice("sugar"),
-        makeSalt()
-    )
-    println()
-    val spices2 = spices1.filter { it.heat <= 5 }.sortedWith(compareBy ({ it.heat }, {it.name}))
-    for (s in spices2)
-        println("Name: ${s.name}, Heat: ${s.heat}")
+}
+
+
+fun makeFish() {
+    val shark = Shark()
+    val pleco = Plecostomus()
+
+    println("Shark: ${shark.color}, Plecostomus: ${pleco.color}")
+
+    shark.eat()
+    pleco.eat()
 }
