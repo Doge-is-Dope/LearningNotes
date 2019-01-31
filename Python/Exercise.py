@@ -1,17 +1,26 @@
-# Write a function called "show_excitement" where the string
-# "I am super excited for this course!" is returned exactly
-# 5 times, where each sentence is separated by a single space.
-# Return the string with "return".
-# You can only have the string once in your code.
-# Don't just copy/paste it 5 times into a single variable!
+class Element:
+    def __init__(self, value):
+        self.head = value
+        self.next = None
+
+    def to
 
 
-def show_excitement():
-    # Your code goes here!
-    a_lst = []
-    for _ in range(5):
-        a_lst.append("I am super excited for this course!")
-    return " ".join(a_lst)
+class LinkedList:
+    def __init__(self, head=None):
+        self.head = head
+
+    def append(self, new_element):
+        if self.head:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_element
+        else:
+            self.head = new_element
 
 
-print(show_excitement())
+
+l = LinkedList()
+l.append(Element("3"))
+print(l.head)
