@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Hello World
+//  I Am Rich
 //
-//  Created by Chun-Chieh Liang on 2/2/19.
+//  Created by Chun-Chieh Liang on 2/3/19.
 //  Copyright © 2019 Chun-Chieh Liang. All rights reserved.
 //
 
