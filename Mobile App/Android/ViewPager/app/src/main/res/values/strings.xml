@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ViewPager</string>
+
+    <string name="category_food">What to eat</string>
+    <string name="category_clothes">What to wear</string>
+    <string name="category_living">Where to live</string>
+</resources>
