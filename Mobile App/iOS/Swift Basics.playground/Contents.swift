@@ -7,12 +7,24 @@ let firstName = "Mike"
 let lastName = "Jordan"
 let fullName = "\(firstName) \(lastName)"
 
-// This is a comment
+// Buy milk
+func buyMilk(quantity: Int) -> Int {
+    print("A bottle of milk is $10")
+    print("You want to buy \(quantity) bottles")
+    return quantity * 10
+}
 
-var num = 19
 
-num = 50
-num += 1
+func loveCalculator(yourName: String, theirName: String) -> String {
+    let loveScore = arc4random_uniform(101)
+    
+    if loveScore > 80 {
+        return "You love each other"
+    } else {
+        return "No love possible"
+    }
+}
 
-
+print("The total is $\(buyMilk(quantity: 6))")
+print(loveCalculator(yourName: "Hank", theirName: "Hannah"))
 
