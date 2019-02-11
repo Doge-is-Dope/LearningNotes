@@ -7,24 +7,45 @@ let firstName = "Mike"
 let lastName = "Jordan"
 let fullName = "\(firstName) \(lastName)"
 
-// Buy milk
-func buyMilk(quantity: Int) -> Int {
-    print("A bottle of milk is $10")
-    print("You want to buy \(quantity) bottles")
-    return quantity * 10
-}
 
 
-func loveCalculator(yourName: String, theirName: String) -> String {
-    let loveScore = arc4random_uniform(101)
+// Calcaulate BMI
+func calculateBMI(weight: Double, height: Double) -> String {
+    let bmi = weight / pow(height, 2)
+    let shotendBMI = String(format: "%1.2f", bmi)
+    var interpretation = ""
     
-    if loveScore > 80 {
-        return "You love each other"
+    
+    if bmi > 25 {
+        interpretation = "overweight"
+    } else if bmi > 18.5 {
+        interpretation = "normal weight"
     } else {
-        return "No love possible"
+        interpretation =  "underweight"
     }
+    return "Your BMI is \(shotendBMI) and you are \(interpretation)"
 }
 
-print("The total is $\(buyMilk(quantity: 6))")
-print(loveCalculator(yourName: "Hank", theirName: "Hannah"))
+// Calcaulate BMI imperial unit
+func calculateBMI2(weightInPounds: Double, heightInFoots: Double, heightRemainInches: Double) -> String {
+    
+    let bmi = weightInPounds * 0.45359237 / pow((heightInFoots * 12 + heightRemainInches) * 0.0254, 2)
+    let shotendBMI = String(format: "%1.2f", bmi)
+    var interpretation = ""
+    
+    
+    if bmi > 25 {
+        interpretation = "overweight"
+    } else if bmi > 18.5 {
+        interpretation = "normal weight"
+    } else {
+        interpretation =  "underweight"
+    }
+    return "Your BMI is \(shotendBMI) and you are \(interpretation)"
+}
+
+print(calculateBMI(weight: 63, height: 1.8))
+print(calculateBMI2(weightInPounds: 140, heightInFoots: 5, heightRemainInches: 11))
+
+
 
