@@ -84,3 +84,17 @@ print(fibonacci2(until: 5))
 print("test", terminator: "")
 print("Gelo")
 
+
+class Person {
+    let name: String
+    let age: Int
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+}
+
+let student = Person(name: "Mike", age: 20)
+print("Student name: \(student.name), Age: \(student.age)")
+
