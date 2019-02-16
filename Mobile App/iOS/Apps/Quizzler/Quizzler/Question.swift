@@ -9,11 +9,11 @@
 import Foundation
 
 class Question {
-    let questionText: String
-    let answer: Bool
+    let text: String
+    let correctAnswer: Bool
     
-    init(text: String, answer: Bool) {
-        self.questionText = text
-        self.answer = answer
+    init(text: String, correctAnswer: Bool) {
+        self.text = text
+        self.correctAnswer = correctAnswer
     }
 }

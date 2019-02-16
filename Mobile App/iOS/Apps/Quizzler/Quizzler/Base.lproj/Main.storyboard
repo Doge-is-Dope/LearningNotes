@@ -155,7 +155,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button" destination="T5N-xc-sVz" id="efi-Bb-M3T"/>
                         <outlet property="progressBar" destination="IFw-9a-LSS" id="FBG-em-yZa"/>
                         <outlet property="progressLabel" destination="qil-6C-XPA" id="vOI-gf-aRi"/>
                         <outlet property="questionLabel" destination="4GJ-Ce-brK" id="pIn-gm-ACF"/>
