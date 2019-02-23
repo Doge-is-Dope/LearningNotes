@@ -32,19 +32,9 @@ class SelfDrivingCar: Car {
     
     override func drive() {
         super.drive()
-        
+        print("Driving towards \(destination)")
     }
 }
 
-
-let c1 = Car(color: "Red")
-print("C1: \(c1.color), \(c1.numOfSeats), \(c1.typeOfCar)")
-c1.drive()
-
-let c2 = Car()
-c2.drive()
-
-
 let sc1 = SelfDrivingCar()
-print("sc: \(sc1.color)")
 sc1.drive()
