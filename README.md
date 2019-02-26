@@ -14,7 +14,7 @@ print("Hello World")
 
 # Outline
 - Basics
-	-[Constans and Variables](https://github.com/Chun-Chieh/LearningNotes#constants-and-variables)
+	- [Constans and Variables](https://github.com/Chun-Chieh/LearningNotes#constants-and-variables)
 	- [String Interpolation](https://github.com/Chun-Chieh/LearningNotes#string-interpolation)
 
 ### Constants and Variables
