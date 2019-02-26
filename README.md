@@ -40,7 +40,8 @@ let x = 87
 
 Java
 ```java
-System.out.println(String.format("%s %d years old", myAge, user.getName()))
+System.out.println(String.format("I'm %d years old", myAge))
+System.out.println(String.format("Good morning, %s", user.getName()))
 ```
 Kotlin
 ```kotlin
