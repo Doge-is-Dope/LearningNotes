@@ -27,7 +27,14 @@ class Car {
     }
 }
 
-class SelfDrivingCar: Car {}
+class SelfDrivingCar: Car {
+    var destination: String = "1 Infinite Loop"
+    
+    override func drive() {
+        super.drive()
+        
+    }
+}
 
 
 let c1 = Car(color: "Red")
