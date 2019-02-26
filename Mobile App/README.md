@@ -2,9 +2,9 @@
 
 # Android
 
-#iOS
+# iOS
 - App
 	- Dicee: AutoLayout, Shake (motionEnded())
 	- Xylophone: AVFoundation
 	- Quizzler, Destini: MVC, if-else
-	- Clima
+	- Clima: CocoaPods
