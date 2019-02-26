@@ -56,7 +56,6 @@ class ViewController: UIViewController {
             updateUI()
         } else {
             let alert = UIAlertController(title: "Awesome", message: "You've finished all questions. Do you want to start over?", preferredStyle: .alert)
-        
             
             let restartAction = UIAlertAction(title: "Restart", style: .default) { (UIAlertAction) in
                 self.startOver()
@@ -75,7 +74,7 @@ class ViewController: UIViewController {
             score += 1
             
         } else {
-           ProgressHUD.showError("Wrong")
+            ProgressHUD.showError("Wrong")
         }
     }
     
