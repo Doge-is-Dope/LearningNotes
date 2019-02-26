@@ -2,6 +2,7 @@
 
 - Basics
 	- [Constans and Variables](https://github.com/Chun-Chieh/LearningNotes#constants-and-variables)
+	- [Optionals]()
 	- [String Interpolation](https://github.com/Chun-Chieh/LearningNotes#string-interpolation)
 	- [Functions](https://github.com/Chun-Chieh/LearningNotes#functions)
 - Classes and Objects
@@ -43,6 +44,40 @@ var x = 3 // var x: Int = 3
 x = 10
 let x = 87
 ```
+
+### Optionals
+Kotlin
+```kotlin
+var x: String? = null // variables are required to initialzed in Kotlin
+x = "Foo"
+println(x!!) // Force unwrapping
+```
+Swift
+```swift
+var x: String?
+x = "Foo"
+print(x!) // Force unwrapping
+```
+#### Null/Nil Handler
+In Kotlin, you can either use if-else to check null pointer,
+```kotlin
+var msg: String?
+if (msg != null) println("Message: $msg") else println("it's null")
+```
+or use ```safe call```operator (```Elvis Operator```).
+```kotlin
+println(msg ?: "it's null")
+```
+
+In Swift, ```Optional binding``` is used to handle nil pointer.
+```swift
+var msg: String?
+if let existedMsg = msg {
+  // print msg when it's not nil
+  print(existedMsg)
+}
+```
+
 ### String Interpolation
 
 Java
@@ -67,7 +102,7 @@ Java has ```default``` 'default' access modifier, which allows access within the
 
 ```java
 static String addTwoNumbers(int num1, int num2) {
-	return num1 + num2
+  return num1 + num2
 }
 addTwoNumbers(8, 9)
 ```
@@ -78,7 +113,7 @@ In Kotlin, the 'default' visibility is ```public``` which is accessible everywhe
 
 ```kotlin
 fun addTwoNumbers(num1: Int, num2: Int): Int {
-	return num1 + num2
+  return num1 + num2
 }
 addTwoNumbers(8, 9)
 ```
@@ -91,7 +126,7 @@ Swift has ```internal``` as 'default' access modifier which allows access within
 
 ```swift
 func addTwoNumbers(num1: Int, num2: Int) -> Int {
-	return num1 + num2
+  return num1 + num2
 }
 addTwoNumbers(num1: 8, num2: 9)
 ```

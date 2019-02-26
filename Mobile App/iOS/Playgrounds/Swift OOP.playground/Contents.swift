@@ -28,13 +28,19 @@ class Car {
 }
 
 class SelfDrivingCar: Car {
-    var destination: String = "1 Infinite Loop"
+    var destination: String?
     
     override func drive() {
         super.drive()
-        print("Driving towards \(destination)")
+        if let userSetDestination = destination {
+            print("Driving towards \(userSetDestination)")
+        }
     }
 }
 
 let sc1 = SelfDrivingCar()
+sc1.destination = "1 Hacker Way"
 sc1.drive()
+
+var x : String?
+print(x!)
