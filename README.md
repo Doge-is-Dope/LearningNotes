@@ -2,7 +2,7 @@
 
 - Basics
 	- [Constans and Variables](https://github.com/Chun-Chieh/LearningNotes#constants-and-variables)
-	- [Optionals]()
+	- [Optionals](https://github.com/Chun-Chieh/LearningNotes#optionals)
 	- [String Interpolation](https://github.com/Chun-Chieh/LearningNotes#string-interpolation)
 	- [Functions](https://github.com/Chun-Chieh/LearningNotes#functions)
 - Classes and Objects
@@ -72,9 +72,9 @@ println(msg ?: "it's null")
 In Swift, ```Optional binding``` is used to handle nil pointer.
 ```swift
 var msg: String?
-if let existedMsg = msg {
-  // print msg when it's not nil
-  print(existedMsg)
+if let existingMsg = msg {
+  // assign msg to existingMsg when it's not nil, and then print it out
+  print(existingMsg)
 }
 ```
 
