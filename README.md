@@ -99,7 +99,7 @@ addTwoNumbers(num1: 8, num2: 9)
 ## Classes and Objects
 Swift
 ```swift
-class Animal() {
+class Animal {
 	var age = 0
 
 	convenience init (age: Int) {
@@ -117,7 +117,7 @@ class Animal() {
 
 Swift
 ```swift
-class Mammal(): Animal {
+class Mammal: Animal {
 	override func breathe() {
 		// ...
 	}
