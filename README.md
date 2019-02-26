@@ -100,14 +100,15 @@ addTwoNumbers(num1: 8, num2: 9)
 Swift
 ```swift
 class Animal {
-var age = 0
-convenience init (age: Int) {
-self.init()
-self.age = age
-}
+  var age = 0
+  convenience init (age: Int) {
+  self.init()
+  self.age = age
+  }
 
-func breathe() {
-	// ...}
+  func breathe() {
+	// ...
+  }
 }
 ```
 
@@ -116,9 +117,9 @@ func breathe() {
 Swift
 ```swift
 class Mammal: Animal {
-override func breathe() {
-// ...
-}
+  override func breathe() {
+  // ...
+  }
 }
 ```
 
