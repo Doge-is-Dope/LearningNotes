@@ -10,6 +10,7 @@ println("Hello World!")
 Swift
 ```Swift
 print("Hello World")
+```
 
 # Outline
 - [Constans and Variables](https://github.com/Chun-Chieh/LearningNotes#constants-and-variables)
