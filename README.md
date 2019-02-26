@@ -3,9 +3,9 @@
 - Basics
 	- [Constans and Variables](https://github.com/Chun-Chieh/LearningNotes#constants-and-variables)
 	- [String Interpolation](https://github.com/Chun-Chieh/LearningNotes#string-interpolation)
-	- [Functions]()
+	- [Functions](https://github.com/Chun-Chieh/LearningNotes#functions)
 - Classes and Objects
-	- [Inheritance]()
+	- [Inheritance](https://github.com/Chun-Chieh/LearningNotes#inheritance)
 
 ## Basics
 
@@ -77,20 +77,20 @@ In Kotlin, the 'default' visibility is ```public``` which is accessible everywhe
 **Getters always have the same visibility as the property**
 
 ```kotlin
-fun addTwoNumbers(num1: Int, num: Int): Int {
+fun addTwoNumbers(num1: Int, num2: Int): Int {
 	return num1 + num2
 }
 addTwoNumbers(8, 9)
 ```
 It can also be written in one line.
 ```kotlin
-fun addTwoNumbers(num1: Int, num: Int) = num1 + num2
+fun addTwoNumbers(num1: Int, num2: Int) = num1 + num2
 ```
 
 Swift has ```internal``` as 'default' access modifier which allows access within the same module
 
 ```swift
-func addTwoNumbers(num1: Int, num: Int) -> Int {
+func addTwoNumbers(num1: Int, num2: Int) -> Int {
 	return num1 + num2
 }
 addTwoNumbers(num1: 8, num2: 9)
@@ -106,6 +106,10 @@ class Animal() {
         self.init()
         self.age = age
     }
+
+    func breathe() {
+    	// ...
+    }
 }
 ```
 
@@ -113,6 +117,10 @@ class Animal() {
 
 Swift
 ```swift
-class Mammal(): Animal {}
+class Mammal(): Animal {
+	override func breathe() {
+		// ...
+	}
+}
 ```
 
