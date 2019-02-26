@@ -1,4 +1,14 @@
 # Kotlin & Swift (& Java) 
+
+- Basics
+	- [Constans and Variables](https://github.com/Chun-Chieh/LearningNotes#constants-and-variables)
+	- [String Interpolation](https://github.com/Chun-Chieh/LearningNotes#string-interpolation)
+	- [Functions]()
+- Classes and Objects
+	- [Inheritance]()
+
+## Basics
+
 Java
 ```java
 System.out.println("Hello World!")
@@ -12,11 +22,6 @@ Swift
 print("Hello World")
 ```
 
-# Outline
-- Basics
-	- [Constans and Variables](https://github.com/Chun-Chieh/LearningNotes#constants-and-variables)
-	- [String Interpolation](https://github.com/Chun-Chieh/LearningNotes#string-interpolation)
-
 ### Constants and Variables
 Kotlin uses ```val``` to define constants while Swift uses ```let```.
 
@@ -28,13 +33,13 @@ final static int constant = 87
 ```
 Kotlin
 ```kotlin
-var x = 3
+var x = 3 // var x: Int = 3
 x = 10
 val x = 87
 ```
 Swift
 ```swift
-var x = 3
+var x = 3 // var x: Int = 3
 x = 10
 let x = 87
 ```
@@ -48,13 +53,64 @@ System.out.println(String.format("Good morning, %s", user.getName()))
 Kotlin
 ```kotlin
 println("I'm $myAge years old")
-println("Good morning, ${user.name}") // object.property
+println("Good morning, ${user.name}")
 ```
 Swift
-```Swift
+```swift
 print("I'm \(myAge) years old")
-print("Good morning, \(user.name)") // object.property
+print("Good morning, \(user.name)")
 ```
 
+### Functions
 
+Java
+Java has ```default``` 'default' access modifier, which allows access within the same package.
+
+```java
+static String addTwoNumbers(int num1, int num2) {
+	return num1 + num2
+}
+addTwoNumbers(8, 9)
+```
+
+Kotlin
+In Kotlin, the 'default' visibility is ```public``` which is accessible  everywhere
+**Getters always have the same visibility as the property**
+
+```kotlin
+fun addTwoNumbers(num1: Int, num: Int): Int {
+	return num1 + num2
+}
+addTwoNumbers(8, 9)
+```
+
+Swift
+Swift has ```internal``` as 'default' access modifier which allows access within the same module
+
+```swift
+func addTwoNumbers(num1: Int, num: Int) -> Int {
+	return num1 + num2
+}
+addTwoNumbers(num1: 8, num2: 9)
+```
+
+## Classes and Objects
+Swift
+```swift
+class Animal() {
+	var age = 0
+
+	convenience init (age: Int) {
+        self.init()
+        self.age = age
+    }
+}
+```
+
+### Inheritance
+
+Swift
+```swift
+class Mammal(): Animal {}
+```
 
