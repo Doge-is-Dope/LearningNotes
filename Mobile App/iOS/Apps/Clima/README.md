@@ -1,5 +1,9 @@
 # Clima
 
+
+- Cocoapod
+- CoreLocation
+
 ### CocoaPod Setup (Xcode 10)
 Intall CocoaPod
 
@@ -28,7 +32,7 @@ open -a Xcode Podfile
 
 uncomment ```platform :ios, '9.0'```
 
-Add necessary pods. e.g. ```pod 'SwiftJSON'```
+Add necessary pods. e.g. ```pod 'SwiftyJSON'```
 
 
 
@@ -36,3 +40,17 @@ Add necessary pods. e.g. ```pod 'SwiftJSON'```
 ```
 pod --version
 ```
+If the version is above ```1.1.1```, it's good to go.
+
+
+### Install the dependencies
+```
+pod install
+```
+
+### Update the dependencies if needed
+```
+pod update
+```
+
+
