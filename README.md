@@ -12,6 +12,9 @@ Swift
 print("Hello World")
 ```
 
+- Constans and Variables
+- String Interpolation
+
 ### Constants and Variables
 Kotlin uses ```val``` to define constants while Swift uses ```let```.
 
@@ -33,8 +36,17 @@ var x = 3
 x = 10
 let x = 87
 ```
-
-
+### String interpolation
+Kotlin
+```kotlin
+println("I'm $myAge years old")
+println("Good morning, ${user.name}") // object.property
+```
+Swift
+```Swift
+print("I'm \(myAge) years old")
+print("Good morning, \(user.name)") // object.property
+```
 
 
 
