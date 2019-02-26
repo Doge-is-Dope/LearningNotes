@@ -63,7 +63,6 @@ print("Good morning, \(user.name)")
 
 ### Functions
 
-Java
 Java has ```default``` 'default' access modifier, which allows access within the same package.
 
 ```java
@@ -73,8 +72,8 @@ static String addTwoNumbers(int num1, int num2) {
 addTwoNumbers(8, 9)
 ```
 
-Kotlin
-In Kotlin, the 'default' visibility is ```public``` which is accessible  everywhere
+In Kotlin, the 'default' visibility is ```public``` which is accessible everywhere.
+
 **Getters always have the same visibility as the property**
 
 ```kotlin
@@ -83,8 +82,11 @@ fun addTwoNumbers(num1: Int, num: Int): Int {
 }
 addTwoNumbers(8, 9)
 ```
+It can also be written in one line.
+```kotlin
+fun addTwoNumbers(num1: Int, num: Int) = num1 + num2
+```
 
-Swift
 Swift has ```internal``` as 'default' access modifier which allows access within the same module
 
 ```swift
