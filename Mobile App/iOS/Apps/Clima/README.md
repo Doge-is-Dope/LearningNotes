@@ -54,3 +54,26 @@ pod update
 ```
 
 
+# CoreLocation
+
+### Import Module 
+```swift
+import CoreLocation
+class ClassName: : UIViewController, CLLocationManagerDelegate {
+  // ...
+}
+```
+### Create an instance of the CLLocationManager class
+```swift
+let locationManager = CLLocationManager()
+```
+
+### Setup the instance
+```swift
+override func viewDidLoad() {
+  super.viewDidLoad()
+
+  locationManager.delegate = self
+  locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+}
+```

@@ -20,6 +20,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
 
     //TODO: Declare instance variables here
     let locationManager = CLLocationManager()
+    
 
     
     //Pre-linked IBOutlets
@@ -34,6 +35,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         
         //TODO:Set up the location manager here.
         locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
     }
     
     
