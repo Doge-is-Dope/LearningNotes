@@ -13,8 +13,9 @@ print("Hello World")
 ```
 
 # Outline
-- [Constans and Variables](https://github.com/Chun-Chieh/LearningNotes#constants-and-variables)
-- [String Interpolation](https://github.com/Chun-Chieh/LearningNotes#string-interpolation)
+- Basics
+	-[Constans and Variables](https://github.com/Chun-Chieh/LearningNotes#constants-and-variables)
+	- [String Interpolation](https://github.com/Chun-Chieh/LearningNotes#string-interpolation)
 
 ### Constants and Variables
 Kotlin uses ```val``` to define constants while Swift uses ```let```.
