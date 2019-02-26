@@ -1,4 +1,4 @@
-# Kotlin & Swift 
+# Kotlin & Swift (& Java) 
 Java
 ```java
 System.out.println("Hello World!")
@@ -37,6 +37,11 @@ x = 10
 let x = 87
 ```
 ### String interpolation
+
+Java
+```java
+System.out.println(String.format("%s %d years old", myAge, user.getName()))
+```
 Kotlin
 ```kotlin
 println("I'm $myAge years old")
