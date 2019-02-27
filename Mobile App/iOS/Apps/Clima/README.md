@@ -1,6 +1,5 @@
 # Clima
 
-
 - Cocoapod
 - CoreLocation
 
@@ -77,3 +76,18 @@ override func viewDidLoad() {
   locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
 }
 ```
+
+### Setup property list (plist)
+
+In ```Support Files```, there's ```info.plist```.
+
+Add two new properties.
+
+```
+Privacy - Location Usage Description
+Privacy - Location When In Use Usage Description
+```
+
+Add the prompt in ```value``` field. E.g. We need your location to obtain the current weather conditions
+
+
