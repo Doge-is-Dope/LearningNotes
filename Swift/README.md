@@ -3,10 +3,10 @@
 - Basics
 	- [Constans and Variables](https://github.com/chunchiehliang/LearningNotes/tree/master/Swift#constants-and-variables)
 	- [Optionals](https://github.com/chunchiehliang/LearningNotes/tree/master/Swift#optionals)
-	- [String Interpolation](https://github.com/Chun-Chieh/LearningNotes/tree/master/Swift#string-interpolation)
-	- [Functions](https://github.com/Chun-Chieh/LearningNotes/tree/master/Swift#functions)
+	- [String Interpolation](https://github.com/chunchiehliang/LearningNotes/tree/master/Swift#string-interpolation)
+	- [Functions](https://github.com/chunchiehliangh/LearningNotes/tree/master/Swift#functions)
 - Classes and Objects
-	- [Inheritance](https://github.com/Chun-Chieh/LearningNotes/tree/master/Swift#inheritance)
+	- [Inheritance](https://github.com/chunchiehliang/LearningNotes/tree/master/Swift#inheritance)
 
 ## Basics
 
