@@ -1,7 +1,9 @@
 # Clima
 
+
 - Cocoapod
 - CoreLocation
+- Networking with Alamofire (API)
 
 ### CocoaPod Setup (Xcode 10)
 Intall CocoaPod
@@ -74,41 +76,6 @@ override func viewDidLoad() {
 
   locationManager.delegate = self
   locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-}
-```
-
-### Setup property list (plist)
-
-In ```Support Files```, there's ```info.plist```.
-
-Add two new properties.
-
-```
-Privacy - Location Usage Description
-Privacy - Location When In Use Usage Description
-```
-
-Add the prompt in ```value``` field. E.g. We need your location to obtain the current weather conditions
-
-### Start updating location
-
-After the permission is checked, we can add ```startUpdatingLocation```.
-
-```swift
-locationManager.startUpdatingLocation()
-```
-
-### Handle the location result
-
-Write the didUpdateLocations method 
-```swift
-func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    // code that handles the result
-}
-```
-Write the didFailWithError method
-```swift
-func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    // code that handles the error
+  locationManager.requestWhenInUseAuthorization()
 }
 ```

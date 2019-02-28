@@ -16,6 +16,8 @@
 var x = 3 // var x: Int = 3
 x = 10
 let x = 87
+let arr = ["orange", "peach"]
+let dict = ["banana" : "yellow", "kiwifruit" : "green"]
 ```
 
 ### Optionals
