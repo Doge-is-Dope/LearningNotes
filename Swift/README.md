@@ -1,12 +1,12 @@
-# Kotlin & Swift (& Java) 
+# Swift
 
 - Basics
 	- [Constans and Variables](https://github.com/Chun-Chieh/LearningNotes#constants-and-variables)
-	- [Optionals](https://github.com/Chun-Chieh/LearningNotes#optionals)
-	- [String Interpolation](https://github.com/Chun-Chieh/LearningNotes#string-interpolation)
-	- [Functions](https://github.com/Chun-Chieh/LearningNotes#functions)
+	- [Optionals](https://github.com/Chun-Chieh/LearningNotes/tree/master/Swift#optionals)
+	- [String Interpolation](https://github.com/Chun-Chieh/LearningNotes/tree/master/Swift#string-interpolation)
+	- [Functions](https://github.com/Chun-Chieh/LearningNotes/tree/master/Swift#functions)
 - Classes and Objects
-	- [Inheritance](https://github.com/Chun-Chieh/LearningNotes#inheritance)
+	- [Inheritance](https://github.com/Chun-Chieh/LearningNotes/tree/master/Swift#inheritance)
 
 ## Basics
 
