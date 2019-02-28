@@ -1,8 +1,8 @@
 # Swift
 
 - Basics
-	- [Constans and Variables](https://github.com/Chun-Chieh/LearningNotes#constants-and-variables)
-	- [Optionals](https://github.com/Chun-Chieh/LearningNotes/tree/master/Swift#optionals)
+	- [Constans and Variables](https://github.com/chunchiehliang/LearningNotes/tree/master/Swift#constants-and-variables)
+	- [Optionals](https://github.com/chunchiehliang/LearningNotes/tree/master/Swift#optionals)
 	- [String Interpolation](https://github.com/Chun-Chieh/LearningNotes/tree/master/Swift#string-interpolation)
 	- [Functions](https://github.com/Chun-Chieh/LearningNotes/tree/master/Swift#functions)
 - Classes and Objects
