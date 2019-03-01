@@ -2,8 +2,9 @@
 
 
 - Cocoapod
-- CoreLocation
+- CoreLocation (work with GPS and OpenWeatherMap API)
 - Networking with Alamofire (API)
+- JSON parsing with SwiftyJSON
 
 ### CocoaPod Setup (Xcode 10)
 Intall CocoaPod
@@ -79,3 +80,53 @@ override func viewDidLoad() {
   locationManager.requestWhenInUseAuthorization()
 }
 ```
+
+### Write Location Manager Delegate Methods
+
+didUpdateLocations method
+```swift
+func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+  let location = locations[locations.count - 1]
+  if location.horizontalAccuracy > 0 {
+  // stop updating location as soon as you've gotten a valid result
+  locationManager.stopUpdatingLocation()
+  // receive the data once by removing the current class from receiving messages from the location
+  // while in the process of being stopped
+  locationManager.delegate = nil
+
+  let latitude = location.coordinate.latitude
+  let longitude = location.coordinate.longitude
+  let params : [String:String] = ["lat" : String(latitude), "lon" : String(longitude), "appid" : APP_ID]
+
+  getWeatherData(url: WEATHER_URL, parameters: params)
+  }
+}
+```
+
+didFailWithError method
+```swift
+func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+  print(error)
+  cityLabel.text = "Location unavailable"
+}
+```
+
+### Get JSON by using API
+```swift
+func getWeatherData(url: String, parameters: [String : String]) {
+  Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
+    // this operation is asynchronized
+    response in
+    if response.result.isSuccess {
+      print("Success Got weather data")
+      
+      let weatherJSON : JSON = JSON(response.result.value!)
+    
+    } else {
+      print("result \(response.result.error!)")
+      self.cityLabel.text = "Connection issue"
+    }
+  }
+}
+```
+
