@@ -2,8 +2,6 @@
 //  ViewController.swift
 //  WeatherApp
 //
-//  Created by Angela Yu on 23/08/2015.
-//  Copyright (c) 2015 London App Brewery. All rights reserved.
 //
 
 import UIKit
@@ -22,6 +20,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
 
     //TODO: Declare instance variables here
     let locationManager = CLLocationManager()
+    let weatherModel = WeatherDataModel()
     
 
     //Pre-linked IBOutlets
@@ -54,6 +53,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 print("Success Got weather data")
                 
                 let weatherJSON : JSON = JSON(response.result.value!)
+                print(weatherJSON)
                 self.updateWeatherData(json:weatherJSON)
                 
             } else {
@@ -71,7 +71,21 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //Write the updateWeatherData method here:
     func updateWeatherData(json: JSON) {
-        let tempResult = json["main"]["temp"]
+        if let tempResult = json["main"]["temp"].double {
+        
+            weatherModel.temperature = Int(tempResult - 273.15)
+        
+            weatherModel.city = json["name"].stringValue
+        
+            weatherModel.condition = json["weather"][0]["id"].intValue
+            
+            weatherModel.weatherIconName = weatherModel.updateWeatherIcon(condition: weatherModel.condition)
+            
+            // update UI
+            updateUIWithWeatherData()
+        } else {
+            cityLabel.text = "Weather unavailable"
+        }
     }
     
 
@@ -84,6 +98,11 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //Write the updateUIWithWeatherData method here:
     
+    func updateUIWithWeatherData(){
+        cityLabel.text = weatherModel.city
+        temperatureLabel.text = "\(weatherModel.temperature)"
+        weatherIcon.image = UIImage(named: weatherModel.weatherIconName)
+    }
     
     
     

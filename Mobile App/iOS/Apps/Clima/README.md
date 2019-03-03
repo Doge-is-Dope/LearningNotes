@@ -5,6 +5,7 @@
 - CoreLocation (work with GPS and OpenWeatherMap API)
 - Networking with Alamofire (API)
 - JSON parsing with SwiftyJSON
+- Segue connecting between viewControllers
 
 ### CocoaPod Setup (Xcode 10)
 Intall CocoaPod
