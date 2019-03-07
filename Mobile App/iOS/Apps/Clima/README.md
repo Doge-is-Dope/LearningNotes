@@ -6,6 +6,7 @@
 - Networking with Alamofire (API)
 - JSON parsing with SwiftyJSON
 - Segue connecting between viewControllers
+- Protocol
 
 ### CocoaPod Setup (Xcode 10)
 Intall CocoaPod
