@@ -135,17 +135,65 @@ func getWeatherData(url: String, parameters: [String : String]) {
 
 # Protocol
 
-Instead of passing data backwards by segues, we use  ```delegates```  and ```protocols``` to avoid creating new objects of the view contorllers.
+Instead of using segues when passing data backwards, we use  ```delegates```  and ```protocols``` to avoid creating new objects of the view contorllers.
 
 1. Create ```protocol```
 ```swift
 protocol CanReceive {
-    func dataReceived(data: String)
+  func dataReceived(data: String)
 }
 ```
 
-2. Make the view controller that's receivinng data conform to the protocol
+2. Make the view controller that's receivinng data conform to the protocol and implement the required method.
 ```swift
-class MainViewController: UIViewController
+class MainViewController: UIViewController, CanReceive {
+  func dataReceived(data: String) {
+    label.text = data
+  }
+}
 ```
 
+3. Create a property with the optional type of the protocol in the sender view controller (class).
+```swift
+class AnotherViewController: UIViewController {
+  var delegate: CanReceive? 
+}
+```
+
+4. Send the data in a proper way.
+```swift
+class AnotherViewController: UIViewController {
+  var delegate: CanReceive?
+  
+  @IBAction func sendDataBack(_ sender: Any){
+    delegate?.dataReceived(data: textField.text!)
+  }
+}
+```
+
+5. Set the sender view controller's delegate as the view controller that's receiving data
+```swift
+class MainViewController: UIViewController, CanReceive {
+  // ...
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "sendDataForwards" {
+      let destinationViewController = segue.destination as! AnotherViewController
+  
+      // this line does the magic
+      destinationViewController.delegate = self
+    }
+  }
+}
+```
+
+6. Dismiss the sender view contoller
+```swift
+class AnotherViewController: UIViewController {
+  // ...
+  
+  @IBAction func sendDataBack(_ sender: Any){
+    delegate?.dataReceived(data: textField.text!)
+    dismiss(animated: true, completion: nil)
+  }
+}
+```
