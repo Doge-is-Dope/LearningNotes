@@ -132,3 +132,20 @@ func getWeatherData(url: String, parameters: [String : String]) {
 }
 ```
 
+
+# Protocol
+
+Instead of passing data backwards by segues, we use  ```delegates```  and ```protocols``` to avoid creating new objects of the view contorllers.
+
+1. Create ```protocol```
+```swift
+protocol CanReceive {
+    func dataReceived(data: String)
+}
+```
+
+2. Make the view controller that's receivinng data conform to the protocol
+```swift
+class MainViewController: UIViewController
+```
+
