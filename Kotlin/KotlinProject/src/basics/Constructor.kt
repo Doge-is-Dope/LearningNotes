@@ -11,7 +11,7 @@ class Book(val title: String, val author: String, var price: Int) {
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val hp = Book("Harry Potter", "JK", 20)
     println("Title: ${hp.title}, Author: ${hp.author}, Price: ${hp.price}, ${hp.message}")
 
@@ -19,4 +19,5 @@ fun main(args: Array<String>) {
     val ho = Book("Harry Otter", "JK", 20, "Hi")
     println("Title: ${ho.title}, Author: ${ho.author}, Price: ${ho.price}, ${ho.message}")
 
+    hp.author
 }

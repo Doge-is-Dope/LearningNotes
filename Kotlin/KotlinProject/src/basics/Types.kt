@@ -64,7 +64,7 @@ fun main(args: Array<String>) {
         "terabyte", "petabyte", "exabyte"
     )
     for ((i, value) in array.withIndex()) {
-        println("1 ${sizes[i]} = ${value.toLong()} bytes")
+        println("1 ${sizes[i]} = ${value.toLong()} ${if(i == 0) "byte" else "bytes"}")
     }
 
     val numbers: IntArray = intArrayOf(3, 4, 6)
@@ -104,6 +104,4 @@ fun main(args: Array<String>) {
     println("sum2: ${sum2(5, 3)}")
 
     printSum(5, 3)
-
-
 }
